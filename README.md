@@ -3,8 +3,13 @@
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.kratos1996/easyniddle.svg?label=maven-central)](https://central.sonatype.com/artifact/io.github.kratos1996/easyniddle)
 [![Kotlin](https://img.shields.io/badge/kotlin-2.1.0-blue.svg?logo=kotlin)](https://kotlinlang.org)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Medium](https://img.shields.io/badge/Medium-EasyNiddle-black?logo=medium)](https://medium.com/@ishant.sharma1947/easyniddle-ba43a7580fbc)
 
 A lightweight, DSL-based navigation library for Jetpack Compose, built on top of Navigation 3. It simplifies navigation by removing the need for string-based routes and complex XML configurations.
+
+## Article
+
+Read the detailed announcement and guide on Medium: [EasyNiddle: Making Jetpack Navigation 3 Simpler for Android Developers](https://medium.com/@ishant.sharma1947/easyniddle-ba43a7580fbc)
 
 ## Features
 
