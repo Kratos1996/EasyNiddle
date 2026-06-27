@@ -1,5 +1,9 @@
 # EasyNiddleNavigation
 
+<p align="center">
+  <img src="easyniddle/libSample/ChatGPT%20Image%20Jun%2027,%202026,%2004_59_45%20PM.png" alt="EasyNiddle Banner" width="100%">
+</p>
+
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.kratos1996/easyniddle.svg?label=maven-central)](https://central.sonatype.com/artifact/io.github.kratos1996/easyniddle)
 [![Kotlin](https://img.shields.io/badge/kotlin-2.1.0-blue.svg?logo=kotlin)](https://kotlinlang.org)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
