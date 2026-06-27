@@ -37,7 +37,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":easyniddle"))
+    implementation("io.github.kratos1996:easyniddle:1.0.1")
     implementation(libs.navigation3.runtime)
     implementation(libs.navigation3.ui)
     implementation(libs.androidx.lifecycle.viewmodel.navigation3)
