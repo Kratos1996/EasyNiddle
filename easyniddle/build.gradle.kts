@@ -4,17 +4,47 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-    id("maven-publish")
-    id("signing")
+    alias(libs.plugins.maven.publish)
 }
 
-group = "dev.ishant"
-version = "1.0.0"
+group = "io.github.kratos1996"
+version = "1.0.1"
 
 val localProperties = Properties().apply {
     val file = rootProject.file("local.properties")
     if (file.exists()) {
         file.inputStream().use { load(it) }
+    }
+}
+
+mavenPublishing {
+    publishToMavenCentral()
+    signAllPublications()
+
+    coordinates("io.github.kratos1996", "easyniddle", "1.0.1")
+
+    pom {
+        name.set("EasyNiddle")
+        description.set("A lightweight DSL-based navigation library for Jetpack Compose")
+        url.set("https://github.com/Kratos1996/EasyNiddle")
+        licenses {
+            license {
+                name.set("The Apache License, Version 2.0")
+                url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+            }
+        }
+        developers {
+            developer {
+                id.set("ishant")
+                name.set("Ishant")
+                email.set("ishant.sharma1947@gmail.com")
+            }
+        }
+        scm {
+            connection.set("scm:git:github.com/Kratos1996/EasyNiddle.git")
+            developerConnection.set("scm:git:ssh://github.com/Kratos1996/EasyNiddle.git")
+            url.set("https://github.com/Kratos1996/EasyNiddle")
+        }
     }
 }
 
@@ -41,13 +71,6 @@ android {
             isIncludeAndroidResources = true
         }
     }
-
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
 }
 
 dependencies {
@@ -68,68 +91,8 @@ dependencies {
     // Navigation
     implementation(libs.navigation.compose)
 
-    // Navigation 3
-    implementation(libs.navigation3.runtime)
-    implementation(libs.navigation3.ui)
-    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
-                groupId = "dev.ishant"
-                artifactId = "easyniddle"
-                version = "1.0.0"
-
-                pom {
-                    name.set("EasyNiddle")
-                    description.set("A lightweight DSL-based navigation library for Jetpack Compose")
-                    url.set("https://github.com/Kratos1996/EasyNiddle")
-                    licenses {
-                        license {
-                            name.set("The Apache License, Version 2.0")
-                            url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
-                        }
-                    }
-                    developers {
-                        developer {
-                            id.set("ishant")
-                            name.set("Ishant")
-                            email.set("ishant.sharma1947@gmail.com")
-                        }
-                    }
-                    scm {
-                        connection.set("scm:git:github.com/Kratos1996/EasyNiddle.git")
-                        developerConnection.set("scm:git:ssh://github.com/Kratos1996/EasyNiddle.git")
-                        url.set("https://github.com/Kratos1996/EasyNiddle")
-                    }
-                }
-            }
-        }
-        repositories {
-            maven {
-                name = "OSSRH"
-                val releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-                val snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-                url = uri(if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl)
-                credentials {
-                    username = localProperties.getProperty("mavenCentralUsername")
-                    password = localProperties.getProperty("mavenCentralPassword")
-                }
-            }
-        }
-    }
-
-    signing {
-        val keyId = localProperties.getProperty("signing.keyId")
-        val password = localProperties.getProperty("signing.password")
-        val secretKey = localProperties.getProperty("signing.secretKey") ?: ""
-        
-        if (keyId != null && password != null && secretKey.isNotEmpty()) {
-            useInMemoryPgpKeys(keyId, secretKey, password)
-            sign(publishing.publications["release"])
-        }
-    }
+    api(libs.navigation3.runtime)
+    api(libs.navigation3.ui)
+    api(libs.androidx.lifecycle.viewmodel.navigation3)
+    api(libs.kotlinx.serialization.json)
 }

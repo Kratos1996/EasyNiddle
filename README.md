@@ -1,5 +1,10 @@
 # EasyNiddleNavigation
 
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.kratos1996/easyniddle.svg?label=maven-central)](https://central.sonatype.com/artifact/io.github.kratos1996/easyniddle)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.1.0-blue.svg?logo=kotlin)](https://kotlinlang.org)
+[![Compose Multiplatform](https://img.shields.io/badge/Compose%20Multiplatform-1.7.3-blue)](https://www.jetbrains.com/lp/compose-multiplatform/)
+[![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+
 A lightweight, DSL-based navigation library for Jetpack Compose, built on top of Navigation 3. It simplifies navigation by removing the need for string-based routes and complex XML configurations.
 
 ## Features
@@ -20,8 +25,7 @@ Add the dependency to your `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("dev.ishant:easyniddle:1.0.0")
-    // Ensure you have navigation3 and serialization dependencies
+    implementation("io.github.kratos1996:easyniddle:1.0.1")
 }
 ```
 
