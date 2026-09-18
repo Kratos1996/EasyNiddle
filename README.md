@@ -33,7 +33,7 @@ Add the dependency to your `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("io.github.kratos1996:easyniddle:1.0.1")
+    implementation("io.github.kratos1996:easyniddle:1.0.3")
 }
 ```
 
