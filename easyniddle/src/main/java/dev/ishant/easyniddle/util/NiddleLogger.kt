@@ -16,20 +16,28 @@ object NiddleLogger {
     var showLogsInRelease: Boolean = false
 
     fun d(message: String) {
-        if (BuildConfig.DEBUG || showLogsInRelease) {
+        if (isDebug() || showLogsInRelease) {
             Log.d(TAG, message)
         }
     }
 
     fun e(message: String, throwable: Throwable? = null) {
-        if (BuildConfig.DEBUG || showLogsInRelease) {
+        if (isDebug() || showLogsInRelease) {
             Log.e(TAG, message, throwable)
         }
     }
 
     fun i(message: String) {
-        if (BuildConfig.DEBUG || showLogsInRelease) {
+        if (isDebug() || showLogsInRelease) {
             Log.i(TAG, message)
+        }
+    }
+
+    private fun isDebug(): Boolean {
+        return try {
+            BuildConfig.DEBUG
+        } catch (_: Throwable) {
+            false
         }
     }
 }

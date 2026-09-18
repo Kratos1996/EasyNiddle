@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "io.github.kratos1996"
-version = "1.0.2"
+version = "1.0.3"
 
 val localProperties = Properties().apply {
     val file = rootProject.file("local.properties")
@@ -21,7 +21,7 @@ mavenPublishing {
     publishToMavenCentral()
     signAllPublications()
 
-    coordinates("io.github.kratos1996", "easyniddle", "1.0.2")
+    coordinates("io.github.kratos1996", "easyniddle", "1.0.3")
 
     pom {
         name.set("EasyNiddle")
@@ -68,10 +68,10 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "consumer-rules.pro"
+                "proguard-rules.pro"
             )
         }
     }

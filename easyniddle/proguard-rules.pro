@@ -1,9 +1,8 @@
 # EasyNiddleNavigation ProGuard Rules
 
-# 1. Preserve the public API of the library
--keep public class dev.ishant.easyniddle.navigation.** {
-    public protected *;
-}
+# 1. Preserve all classes and members of the library
+-keep class dev.ishant.easyniddle.** { *; }
+-keepclassmembers class dev.ishant.easyniddle.** { *; }
 
 # 2. Keep all implementations of SerializableRoute
 # This is critical because routes are serialized and deserialized by name/type.

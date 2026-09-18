@@ -34,8 +34,7 @@ class NiddleNavGraphBuilderTest {
         val entry = provider(RouteA)
 
         assertNotNull(entry)
-        // Since key is private in NavEntry, we check contentKey which defaults to key.toString()
-        assertEquals(RouteA.toString(), entry.contentKey)
+        assertEquals(Pair("$RouteA", "${RouteA::class}"), entry.contentKey)
     }
 
     @Test(expected = IllegalStateException::class)

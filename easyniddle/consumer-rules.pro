@@ -1,10 +1,9 @@
 # EasyNiddleNavigation Consumer Rules
 # These rules are automatically applied to the app that uses this library.
 
-# 1. Preserve the public API of the library
--keep public class dev.ishant.easyniddle.navigation.** {
-    public protected *;
-}
+# 1. Preserve all classes and members of the library
+-keep class dev.ishant.easyniddle.** { *; }
+-keepclassmembers class dev.ishant.easyniddle.** { *; }
 
 # 2. Keep all implementations of SerializableRoute
 # Critical for navigation and state restoration in the consumer app.
