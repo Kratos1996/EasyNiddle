@@ -100,7 +100,6 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     // Navigation
     implementation(libs.navigation.compose)
-
     api(libs.navigation3.runtime)
     api(libs.navigation3.ui)
     api(libs.androidx.lifecycle.viewmodel.navigation3)
