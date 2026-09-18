@@ -1,10 +1,11 @@
 import java.util.Properties
 
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.maven.publish)
+    id("com.vanniktech.maven.publish") version "0.34.0"
 }
 
 group = "io.github.kratos1996"

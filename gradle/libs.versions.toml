@@ -18,7 +18,7 @@ hilt = "2.60.1"
 kotlinxCoroutines = "1.11.0"
 robolectric = "4.17"
 mockk = "1.14.11"
-mavenPublish = "0.37.0"
+mavenPublish = "0.34.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
