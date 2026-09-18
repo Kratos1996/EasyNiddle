@@ -20,7 +20,6 @@ val localProperties = Properties().apply {
 mavenPublishing {
     publishToMavenCentral()
     signAllPublications()
-
     coordinates("io.github.kratos1996", "easyniddle", "1.0.3")
 
     pom {
