@@ -1,0 +1,10 @@
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Ensure gradlew uses LF line endings and stays executable across OSes
+gradlew text eol=lf
+*.sh text eol=lf
+
+# Windows batch files must keep CRLF line endings
+*.bat text eol=crlf
+*.cmd text eol=crlf
